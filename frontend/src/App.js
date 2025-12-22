@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App bg-black min-h-screen">
+    <div className="App bg-[#EEEEEE] min-h-screen">
       <Header />
       <main>
         <HeroSection />

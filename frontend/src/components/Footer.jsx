@@ -1,6 +1,6 @@
 import React from 'react';
 import { personalInfo, navLinks } from '../data/mock';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black border-t border-white/10 py-16">
+    <footer className="bg-[#173F5F] text-white py-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
@@ -24,13 +24,11 @@ const Footer = () => {
                 e.preventDefault();
                 scrollToSection('#home');
               }}
-              className="text-2xl font-bold text-white tracking-tight hover:text-white/80 transition-colors inline-block mb-4"
+              className="text-2xl font-bold tracking-wider hover:opacity-90 transition-opacity inline-block mb-4"
             >
-              <span className="text-white/60">&lt;</span>
-              {personalInfo.name.split(' ')[0]}
-              <span className="text-white/60">/&gt;</span>
+              {personalInfo.name.split(' ')[0].toUpperCase()}
             </a>
-            <p className="text-white/50 leading-relaxed">
+            <p className="text-white/70 leading-relaxed">
               {personalInfo.title} passionate about building secure, 
               high-performance web applications.
             </p>
@@ -38,7 +36,7 @@ const Footer = () => {
 
           {/* Quick links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <a
@@ -48,7 +46,7 @@ const Footer = () => {
                     e.preventDefault();
                     scrollToSection(link.href);
                   }}
-                  className="text-white/50 hover:text-white transition-colors"
+                  className="text-white/70 hover:text-white transition-colors"
                 >
                   {link.name}
                 </a>
@@ -58,55 +56,54 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Get In Touch</h4>
-            <p className="text-white/50 mb-4">{personalInfo.location}</p>
+            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider">Get In Touch</h4>
+            <p className="text-white/70 mb-2">{personalInfo.location}</p>
             <a
               href={`mailto:${personalInfo.email}`}
-              className="text-white/50 hover:text-white transition-colors block mb-2"
+              className="text-white/70 hover:text-white transition-colors block mb-2"
             >
               {personalInfo.email}
             </a>
             <a
               href={`tel:${personalInfo.phone}`}
-              className="text-white/50 hover:text-white transition-colors block"
+              className="text-white/70 hover:text-white transition-colors block mb-4"
             >
               {personalInfo.phone}
             </a>
+
+            {/* Social links */}
+            <div className="flex items-center gap-3 mt-4">
+              <a
+                href={personalInfo.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-white/10 rounded hover:bg-white/20 transition-colors"
+              >
+                <Github size={18} />
+              </a>
+              <a
+                href={personalInfo.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 bg-white/10 rounded hover:bg-white/20 transition-colors"
+              >
+                <Linkedin size={18} />
+              </a>
+              <a
+                href={personalInfo.social.email}
+                className="p-2 bg-white/10 rounded hover:bg-white/20 transition-colors"
+              >
+                <Mail size={18} />
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-sm flex items-center gap-1">
-            © {currentYear} {personalInfo.name}. Built with
-            <Heart className="text-white/60" size={14} />
+        <div className="pt-8 border-t border-white/20 text-center">
+          <p className="text-white/60 text-sm">
+            © {currentYear} {personalInfo.name}. All Rights Reserved.
           </p>
-
-          {/* Social links */}
-          <div className="flex items-center gap-4">
-            <a
-              href={personalInfo.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/40 hover:text-white transition-colors"
-            >
-              <Github size={20} />
-            </a>
-            <a
-              href={personalInfo.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/40 hover:text-white transition-colors"
-            >
-              <Linkedin size={20} />
-            </a>
-            <a
-              href={personalInfo.social.email}
-              className="text-white/40 hover:text-white transition-colors"
-            >
-              <Mail size={20} />
-            </a>
-          </div>
         </div>
       </div>
     </footer>
