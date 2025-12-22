@@ -1,28 +1,26 @@
 import React from 'react';
 import { education } from '../data/mock';
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, BookOpen } from 'lucide-react';
 
 const EducationSection = () => {
   const getIcon = (degree) => {
     if (degree.includes('B.Tech')) return GraduationCap;
+    if (degree.includes('Intermediate')) return BookOpen;
     return Award;
   };
 
   return (
-    <section id="education" className="py-32 bg-black relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+    <section id="education" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section header */}
-        <div className="mb-20">
-          <p className="text-white/40 text-sm tracking-[0.3em] uppercase mb-4">Education</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Academic background
-            <br />
-            <span className="text-white/60">& qualifications</span>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#173F5F] mb-4">
+            Education
           </h2>
+          <div className="h-1 w-16 bg-[#173F5F] mx-auto mb-6" />
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            My academic background and qualifications
+          </p>
         </div>
 
         {/* Education cards */}
@@ -32,22 +30,22 @@ const EducationSection = () => {
             return (
               <div
                 key={index}
-                className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 hover:border-white/20"
+                className="bg-[#EEEEEE] rounded-lg p-8 card-hover"
               >
                 {/* Icon */}
-                <div className="p-4 bg-white/10 rounded-2xl w-fit mb-6 group-hover:bg-white/20 transition-colors">
+                <div className="p-4 bg-[#173F5F] rounded-lg w-fit mb-6">
                   <Icon className="text-white" size={24} />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-white font-semibold text-lg mb-2">{edu.degree}</h3>
-                <p className="text-white/60 mb-4">{edu.institution}</p>
+                <h3 className="text-[#173F5F] font-bold text-lg mb-2">{edu.degree}</h3>
+                <p className="text-gray-600 mb-4">{edu.institution}</p>
                 
-                <div className="pt-4 border-t border-white/10">
-                  <p className="text-white/40 text-sm mb-1">{edu.board}</p>
-                  <div className="flex items-center justify-between mt-3">
-                    <span className="text-white/40 text-xs uppercase tracking-wider">Aggregate</span>
-                    <span className="text-white font-semibold">{edu.aggregate}</span>
+                <div className="pt-4 border-t border-gray-300">
+                  <p className="text-gray-500 text-sm mb-3">{edu.board}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 text-xs uppercase tracking-wider">Aggregate</span>
+                    <span className="text-[#173F5F] font-bold text-lg">{edu.aggregate}</span>
                   </div>
                 </div>
               </div>
