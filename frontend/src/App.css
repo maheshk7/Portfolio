@@ -1,75 +1,88 @@
-/* Global App Styles */
+/* Global App Styles - Shrashti Template */
 
 /* Remove default link styles */
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+/* Primary color utilities */
+.bg-primary-navy {
+  background-color: #173F5F;
+}
+
+.text-primary-navy {
+  color: #173F5F;
+}
+
+.border-primary-navy {
+  border-color: #173F5F;
+}
+
+/* Section backgrounds */
+.bg-light-gray {
+  background-color: #EEEEEE;
+}
+
+.bg-white-section {
+  background-color: #FFFFFF;
 }
 
 /* Fade in animation */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Gradient text utility */
-.gradient-text {
-    background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.6) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+/* Slide animation for carousel */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-/* Glass card effect */
-.glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.slide-in {
+  animation: slideIn 0.5s ease-out forwards;
 }
 
-/* Glow effect on hover */
-.glow-hover {
-    transition: box-shadow 0.3s ease;
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.glow-hover:hover {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(23, 63, 95, 0.15);
 }
 
-/* Pulse animation for timeline dots */
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
+/* Button styles */
+.btn-primary-navy {
+  background-color: #173F5F;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
-.animate-pulse-slow {
-    animation: pulse 3s ease-in-out infinite;
+.btn-primary-navy:hover {
+  background-color: #0f2940;
 }
 
-/* Float animation */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.float {
-    animation: float 6s ease-in-out infinite;
+/* Section divider */
+.section-divider {
+  height: 4px;
+  width: 60px;
+  background-color: #173F5F;
 }

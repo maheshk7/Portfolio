@@ -25,14 +25,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-black/70 backdrop-blur-xl border-b border-white/10'
-          : 'bg-transparent'
+          ? 'bg-[#173F5F] shadow-lg'
+          : 'bg-[#173F5F]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a
             href="#home"
@@ -40,11 +40,9 @@ const Header = () => {
               e.preventDefault();
               scrollToSection('#home');
             }}
-            className="text-xl font-bold text-white tracking-tight hover:text-white/80 transition-colors"
+            className="text-xl font-bold text-white tracking-wider hover:opacity-90 transition-opacity"
           >
-            <span className="text-white/60">&lt;</span>
-            {personalInfo.name.split(' ')[0]}
-            <span className="text-white/60">/&gt;</span>
+            {personalInfo.name.split(' ')[0].toUpperCase()}
           </a>
 
           {/* Desktop Navigation */}
@@ -57,10 +55,9 @@ const Header = () => {
                   e.preventDefault();
                   scrollToSection(link.href);
                 }}
-                className="px-4 py-2 text-sm text-white/70 hover:text-white transition-colors relative group"
+                className="px-4 py-2 text-sm text-white/90 hover:text-white transition-colors font-medium"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-white/50 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </nav>
@@ -69,9 +66,9 @@ const Header = () => {
           <div className="hidden md:block">
             <Button
               onClick={() => scrollToSection('#contact')}
-              className="bg-white text-black hover:bg-white/90 px-6 py-2 rounded-full text-sm font-medium transition-all hover:scale-105"
+              className="bg-white text-[#173F5F] hover:bg-gray-100 px-6 py-2 rounded text-sm font-semibold transition-all"
             >
-              Get In Touch
+              Hire Me
             </Button>
           </div>
 
@@ -87,11 +84,11 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 transition-all duration-300 overflow-hidden ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-[#173F5F] border-t border-white/10 transition-all duration-300 overflow-hidden ${
           isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <nav className="flex flex-col p-6 gap-4">
+        <nav className="flex flex-col p-6 gap-2">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -100,16 +97,16 @@ const Header = () => {
                 e.preventDefault();
                 scrollToSection(link.href);
               }}
-              className="text-white/70 hover:text-white transition-colors py-2"
+              className="text-white/90 hover:text-white transition-colors py-2 font-medium"
             >
               {link.name}
             </a>
           ))}
           <Button
             onClick={() => scrollToSection('#contact')}
-            className="bg-white text-black hover:bg-white/90 mt-4 rounded-full"
+            className="bg-white text-[#173F5F] hover:bg-gray-100 mt-4 rounded font-semibold"
           >
-            Get In Touch
+            Hire Me
           </Button>
         </nav>
       </div>

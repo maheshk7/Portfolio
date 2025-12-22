@@ -1,4 +1,4 @@
-// Mock data for Mahesh Katti's Portfolio
+// Mock data for Mahesh Katti's Portfolio - Shrashti Template Style
 
 export const personalInfo = {
   name: "Mahesh Katti",
@@ -152,4 +152,23 @@ export const navLinks = [
   { name: "Experience", href: "#experience" },
   { name: "Education", href: "#education" },
   { name: "Contact", href: "#contact" }
+];
+
+// Carousel slides for hero section
+export const heroSlides = [
+  {
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80",
+    caption: "Full Stack Development",
+    description: "Building scalable web applications with modern technologies"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&q=80",
+    caption: "Clean Code Architecture",
+    description: "Writing maintainable and efficient code solutions"
+  },
+  {
+    image: "https://images.unsplash.com/photo-1550439062-609e1531270e?w=1920&q=80",
+    caption: "Cybersecurity Solutions",
+    description: "Developing secure platforms for digital risk management"
+  }
 ];
