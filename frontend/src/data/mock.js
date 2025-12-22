@@ -1,17 +1,17 @@
-// Mock data for Mahesh Katti's Portfolio - Shrashti Template Style
+// Mock data for Mahesh Katti's Portfolio - Enhanced Version
 
 export const personalInfo = {
   name: "Mahesh Katti",
   title: "Senior Full Stack Developer",
   tagline: "Building secure, high-performance web applications",
-  email: "maheshk9668@gmail.com",
+  email: "maheshkathi20@gmail.com",
   phone: "+91 7702432219",
   location: "Hyderabad, India",
-  profileImage: "https://customer-assets.emergentagent.com/job_3ac6ebc9-b05b-4890-b827-88b06aaa3872/artifacts/2upgxfvi_WhatsApp%20Image%202025-12-22%20at%2012.38.17%20PM.jpeg",
+  profileImage: "https://customer-assets.emergentagent.com/job_3ac6ebc9-b05b-4890-b827-88b06aaa3872/artifacts/6yo9tetb_image.png",
   social: {
     github: "https://github.com/maheshkatti",
     linkedin: "https://linkedin.com/in/maheshkatti",
-    email: "mailto:maheshk9668@gmail.com"
+    email: "mailto:maheshkathi20@gmail.com"
   }
 };
 
@@ -43,6 +43,123 @@ export const skills = {
     "Windows"
   ]
 };
+
+// Advanced Skills Categories
+export const advancedSkills = [
+  {
+    id: 1,
+    title: "Advanced Backend & Architecture",
+    icon: "Server",
+    color: "from-blue-500 to-cyan-500",
+    description: "Deep system design and scalability expertise",
+    items: [
+      { category: "Authentication & Authorization", skills: ["JWT", "OAuth2", "Refresh Tokens", "RBAC"] },
+      { category: "Application Architecture", skills: ["MVC vs Clean Architecture", "Monolith vs Microservices"] },
+      { category: "Performance Optimization", skills: ["Redis Caching", "Rate Limiting", "Async Processing", "Queues & Workers"] },
+      { category: "Real-time Systems", skills: ["WebSockets", "Socket.io", "Server-Sent Events"] }
+    ]
+  },
+  {
+    id: 2,
+    title: "DevOps & Deployment",
+    icon: "Cloud",
+    color: "from-purple-500 to-pink-500",
+    description: "Full ownership of production environments",
+    items: [
+      { category: "Version Control", skills: ["Advanced Git", "Rebase", "Cherry-pick", "Release Flows"] },
+      { category: "CI/CD", skills: ["GitHub Actions", "GitLab CI"] },
+      { category: "Containerization", skills: ["Docker", "Docker Compose"] },
+      { category: "Cloud Platforms", skills: ["AWS", "Azure", "GCP", "EC2", "S3", "IAM"] },
+      { category: "Hosting & Servers", skills: ["Nginx", "PM2", "Reverse Proxies"] }
+    ]
+  },
+  {
+    id: 3,
+    title: "Database & Data Engineering",
+    icon: "Database",
+    color: "from-emerald-500 to-teal-500",
+    description: "From usage to design mastery",
+    items: [
+      { category: "Database Design", skills: ["Normalization", "Denormalization", "Indexing Strategies"] },
+      { category: "Advanced Concepts", skills: ["Transactions", "Concurrency", "Query Optimization"] },
+      { category: "ORMs", skills: ["Sequelize", "TypeORM", "Prisma"] },
+      { category: "Data Strategy", skills: ["SQL vs NoSQL vs Redis", "Migrations", "Backups"] }
+    ]
+  },
+  {
+    id: 4,
+    title: "Testing & Quality Engineering",
+    icon: "CheckCircle",
+    color: "from-orange-500 to-amber-500",
+    description: "What senior full-stack devs never skip",
+    items: [
+      { category: "Frontend Testing", skills: ["Jest", "Testing Library", "Cypress"] },
+      { category: "Backend Testing", skills: ["Unit Tests", "Integration Tests", "API Contract Testing"] },
+      { category: "Methodologies", skills: ["TDD", "Mocking & Stubbing"] }
+    ]
+  },
+  {
+    id: 5,
+    title: "Frontend Engineering",
+    icon: "Layout",
+    color: "from-indigo-500 to-violet-500",
+    description: "Beyond UI to frontend systems",
+    items: [
+      { category: "State Management", skills: ["Redux", "NgRx", "Zustand"] },
+      { category: "Performance", skills: ["Lazy Loading", "Memoization", "Bundle Optimization"] },
+      { category: "Accessibility", skills: ["WCAG Standards", "SEO for SPAs"] },
+      { category: "SSR & SSG", skills: ["Next.js", "Angular Universal"] },
+      { category: "Design Systems", skills: ["Reusable Components", "Storybook"] }
+    ]
+  },
+  {
+    id: 6,
+    title: "Security Fundamentals",
+    icon: "Shield",
+    color: "from-red-500 to-rose-500",
+    description: "Full-stack devs are gatekeepers",
+    items: [
+      { category: "Attack Prevention", skills: ["XSS", "CSRF", "SQL Injection"] },
+      { category: "Secure Communication", skills: ["HTTPS", "CORS"] },
+      { category: "Best Practices", skills: ["Secure Password Storage", "Environment Variables", "OWASP Top 10"] }
+    ]
+  },
+  {
+    id: 7,
+    title: "System Design",
+    icon: "Layers",
+    color: "from-cyan-500 to-blue-500",
+    description: "What separates mid-level from senior",
+    items: [
+      { category: "Scalable APIs", skills: ["Load Balancing", "Stateless Services", "Horizontal Scaling"] },
+      { category: "Event-driven Systems", skills: ["Message Queues", "Event Sourcing"] },
+      { category: "System Designs", skills: ["Chat Apps", "E-commerce Platforms", "Notification Systems"] }
+    ]
+  },
+  {
+    id: 8,
+    title: "Product & Collaboration",
+    icon: "Users",
+    color: "from-pink-500 to-fuchsia-500",
+    description: "Often invisible, always decisive",
+    items: [
+      { category: "Technical Skills", skills: ["Requirement Analysis", "API Documentation", "Swagger/OpenAPI"] },
+      { category: "Soft Skills", skills: ["Technical Writing", "Code Reviews", "Mentoring", "Cross-team Collaboration"] }
+    ]
+  },
+  {
+    id: 9,
+    title: "Bonus Skills",
+    icon: "Sparkles",
+    color: "from-yellow-500 to-orange-500",
+    description: "Powerful differentiators",
+    items: [
+      { category: "Modern Tech", skills: ["GraphQL", "Micro-frontends", "Web Vitals (LCP, CLS)"] },
+      { category: "Mobile & AI", skills: ["React Native", "Flutter Basics", "OpenAI APIs", "ML Inference"] },
+      { category: "Observability", skills: ["Logging", "Monitoring", "Sentry Error Tracking"] }
+    ]
+  }
+];
 
 export const experience = [
   {
@@ -150,8 +267,7 @@ export const navLinks = [
   { name: "About", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Experience", href: "#experience" },
-  { name: "Education", href: "#education" },
-  { name: "Contact", href: "#contact" }
+  { name: "Education", href: "#education" }
 ];
 
 // Carousel slides for hero section
@@ -172,3 +288,13 @@ export const heroSlides = [
     description: "Developing secure platforms for digital risk management"
   }
 ];
+
+// Chatbot conversation flow
+export const chatbotFlow = {
+  greeting: "Hi there! 👋 I'm Mahesh's assistant. How can I help you today?",
+  options: [
+    { id: "hire", text: "I want to hire Mahesh" },
+    { id: "project", text: "Discuss a project" },
+    { id: "contact", text: "Get in touch" }
+  ]
+};
