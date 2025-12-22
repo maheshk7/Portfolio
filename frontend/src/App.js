@@ -7,22 +7,29 @@ import AboutSection from "./components/AboutSection";
 import SkillsSection from "./components/SkillsSection";
 import ExperienceSection from "./components/ExperienceSection";
 import EducationSection from "./components/EducationSection";
-import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import FloatingParticles from "./components/FloatingParticles";
+import Chatbot from "./components/Chatbot";
 
 function App() {
   return (
-    <div className="App bg-[#EEEEEE] min-h-screen">
+    <div className="App min-h-screen relative">
+      {/* Floating particles background */}
+      <FloatingParticles />
+      
       <Header />
-      <main>
+      <main className="relative z-10">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
         <ExperienceSection />
         <EducationSection />
-        <ContactSection />
       </main>
       <Footer />
+      
+      {/* Chatbot */}
+      <Chatbot />
+      
       <Toaster />
     </div>
   );
