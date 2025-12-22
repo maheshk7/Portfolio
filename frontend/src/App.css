@@ -1,5 +1,14 @@
 /* Global App Styles - Enhanced Animated Version */
 
+/* Hide external badges */
+#emergent-badge,
+[id*="emergent"],
+a[href*="emergent"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
 /* Floating bubbles animation */
 @keyframes float {
   0%, 100% {
