@@ -9,8 +9,8 @@ export const personalInfo = {
   location: "Hyderabad, India",
   profileImage: "https://customer-assets.emergentagent.com/job_3ac6ebc9-b05b-4890-b827-88b06aaa3872/artifacts/6yo9tetb_image.png",
   social: {
-    github: "https://github.com/maheshkatti",
-    linkedin: "https://linkedin.com/in/maheshkatti",
+    github: "https://github.com/maheshk7",
+    linkedin: "https://www.linkedin.com/in/katti-mahesh-255768201/",
     email: "mailto:maheshkathi20@gmail.com"
   }
 };

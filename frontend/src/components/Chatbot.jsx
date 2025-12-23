@@ -44,7 +44,7 @@ const Chatbot = () => {
 
   const handleOptionClick = (option) => {
     setMessages(prev => [...prev, { text: option, sender: 'user' }]);
-    
+
     setTimeout(() => {
       if (currentStep === 'greeting') {
         simulateTyping("Great! Let me collect some information so Mahesh can get back to you. What's your name?", 'bot');
@@ -55,7 +55,7 @@ const Chatbot = () => {
 
   const handleInputSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (currentStep === 'name' && formData.name) {
       setMessages(prev => [...prev, { text: formData.name, sender: 'user' }]);
       simulateTyping(`Nice to meet you, ${formData.name}! What's your email address?`, 'bot');
@@ -67,7 +67,7 @@ const Chatbot = () => {
     } else if (currentStep === 'message' && formData.message) {
       setMessages(prev => [...prev, { text: formData.message, sender: 'user' }]);
       setIsSending(true);
-      
+
       try {
         const response = await fetch(`${BACKEND_URL}/api/contact`, {
           method: 'POST',
@@ -89,7 +89,7 @@ const Chatbot = () => {
       } catch (error) {
         simulateTyping(`Thank you, ${formData.name}! \ud83c\udf89 Your message has been recorded. Mahesh will get back to you at ${formData.email} soon!`, 'bot');
       }
-      
+
       setIsSending(false);
       setCurrentStep('done');
       setFormData({ name: '', email: '', message: '' });
@@ -116,8 +116,12 @@ const Chatbot = () => {
           {/* Header */}
           <div className="bg-gradient-to-r from-[#0a1628] to-[#1e3a5f] p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
-                <MessageCircle className="text-blue-400" size={20} />
+              <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center overflow-hidden">
+                <img
+                  src={personalInfo.profileImage}
+                  alt="Mahesh Katti"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="text-white font-semibold">Chat with Mahesh</h3>
@@ -140,17 +144,16 @@ const Chatbot = () => {
                 className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'} animate-fade-in-up`}
               >
                 <div
-                  className={`max-w-[80%] p-3 rounded-2xl ${
-                    msg.sender === 'user'
-                      ? 'bg-blue-500 text-white rounded-br-md'
-                      : 'bg-white/10 text-white rounded-bl-md'
-                  }`}
+                  className={`max-w-[80%] p-3 rounded-2xl ${msg.sender === 'user'
+                    ? 'bg-blue-500 text-white rounded-br-md'
+                    : 'bg-white/10 text-white rounded-bl-md'
+                    }`}
                 >
                   {msg.text}
                 </div>
               </div>
             ))}
-            
+
             {isTyping && (
               <div className="flex justify-start">
                 <div className="bg-white/10 text-white p-3 rounded-2xl rounded-bl-md">
@@ -162,7 +165,7 @@ const Chatbot = () => {
                 </div>
               </div>
             )}
-            
+
             {/* Options */}
             {currentStep === 'greeting' && messages.length > 0 && !isTyping && (
               <div className="flex flex-wrap gap-2 mt-4">
@@ -189,7 +192,7 @@ const Chatbot = () => {
                 </button>
               </div>
             )}
-            
+
             <div ref={messagesEndRef} />
           </div>
 
@@ -259,7 +262,13 @@ const Chatbot = () => {
         {isOpen ? (
           <X className="text-white" size={24} />
         ) : (
-          <MessageCircle className="text-white" size={24} />
+          <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white animate-bounce shadow-lg">
+            <img
+              src={personalInfo.profileImage}
+              alt="Chat"
+              className="w-full h-full object-cover"
+            />
+          </div>
         )}
       </button>
     </div>

@@ -129,7 +129,7 @@ const SkillsSection = () => {
           <p className="text-gray-600 text-center mb-8">Senior-level skills that set me apart</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
           {advancedSkills.map((skill, index) => {
             const Icon = iconMap[skill.icon] || Server;
             const isExpanded = expandedCard === skill.id;
