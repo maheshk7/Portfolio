@@ -7,8 +7,7 @@ import { personalInfo } from '../data/mock';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
-const Chatbot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Chatbot = ({ isOpen, onToggle }) => {
   const [messages, setMessages] = useState([]);
   const [currentStep, setCurrentStep] = useState('greeting');
   const [formData, setFormData] = useState({
@@ -112,7 +111,7 @@ const Chatbot = () => {
     <div className="chatbot-container">
       {/* Chat Window */}
       {isOpen && (
-        <div className="chatbot-window glass-dark">
+        <div className="chatbot-window glass-dark pop-in-up">
           {/* Header */}
           <div className="bg-gradient-to-r from-[#0a1628] to-[#1e3a5f] p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -129,7 +128,7 @@ const Chatbot = () => {
               </div>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={onToggle}
               className="p-2 hover:bg-white/10 rounded-full transition-colors"
             >
               <X className="text-white" size={20} />
@@ -256,7 +255,7 @@ const Chatbot = () => {
 
       {/* Toggle Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onToggle}
         className={`chatbot-button ${isOpen ? 'rotate-90' : ''} transition-transform`}
       >
         {isOpen ? (

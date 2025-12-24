@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Toaster } from "./components/ui/toaster";
 import Header from "./components/Header";
@@ -12,12 +12,14 @@ import FloatingParticles from "./components/FloatingParticles";
 import Chatbot from "./components/Chatbot";
 
 function App() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
     <div className="App min-h-screen relative">
       {/* Floating particles background */}
       <FloatingParticles />
-      
-      <Header />
+
+      <Header onOpenChat={() => setIsChatOpen(true)} />
       <main className="relative z-10">
         <HeroSection />
         <AboutSection />
@@ -26,10 +28,10 @@ function App() {
         <EducationSection />
       </main>
       <Footer />
-      
+
       {/* Chatbot */}
-      <Chatbot />
-      
+      <Chatbot isOpen={isChatOpen} onToggle={() => setIsChatOpen(prev => !prev)} />
+
       <Toaster />
     </div>
   );

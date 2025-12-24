@@ -34,7 +34,7 @@ const Footer = () => {
               <span className="text-gradient">{personalInfo.name.split(' ')[0].toUpperCase()}</span>
             </a>
             <p className="text-white/70 leading-relaxed">
-              {personalInfo.title} passionate about building secure, 
+              {personalInfo.title} passionate about building secure,
               high-performance web applications.
             </p>
           </div>
@@ -107,7 +107,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-white/10 text-center">
           <p className="text-white/60 text-sm flex items-center justify-center gap-2">
-            \u00a9 {currentYear} {personalInfo.name}. Built with
+            © {currentYear} {personalInfo.name}. Built with
             <Heart className="text-red-400 animate-pulse" size={14} />
           </p>
         </div>

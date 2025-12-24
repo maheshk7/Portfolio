@@ -259,7 +259,7 @@ export const strengths = [
 export const personalDetails = {
   dob: "20-05-1995",
   nationality: "Indian",
-  languages: ["English", "Hindi", "Telugu"]
+  languages: ["English", "Telugu"]
 };
 
 export const navLinks = [
